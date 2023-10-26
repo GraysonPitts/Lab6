@@ -2,7 +2,7 @@
 def decode(encode): # here the program will 'decode' the original password by adding 3 to each digit
     decodedInput = ''
     for num in encode:
-        if int(num) >= 7: #if the integer is greater than 6, then we add 3 then subtract 10 to avoid extra digits
+        if int(num) >= 7: #if the integer is greater than or equal to 7, then we add 3 then subtract 10 to avoid extra digits
             newDecode = int(num) + 3 - 10
             decodedInput += str(newDecode)
         else:
