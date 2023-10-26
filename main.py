@@ -1,16 +1,29 @@
-# This is a sample Python script.
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+def decode(encode):
+    decodedInput = ''
+    for num in encode:
+        if int(num) >= 7:
+            newDecode = int(num) + 3 - 10
+            decodedInput += str(newDecode)
+        else:
+            newDecode = int(num) + 3
+            decodedInput += str(newDecode)
+    return decodedInput
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+    while True:
+        print('Main Menu')
+        print('-'*9)
+        print('1. Encode\n2. Decode\n3. Quit\n')
+
+        userInput = int(input("Please enter an option:"))
+        if userInput == 1:
+            encodeInput = input("Please enter your password to encode: ")
+            print('Your password has been encoded and stored!')
+        if userInput == 2:
+            print(f"The encoded password is {decode(encodeInput)}, and the original password is {encodeInput}.\n")
+        if userInput == 3:
+            break
